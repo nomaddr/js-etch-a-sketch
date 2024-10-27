@@ -20,14 +20,11 @@ body {
 	overflow: hidden;
 }
 
-.container > * {
-	flex: 1 0 6%;
-}
-
 .square {
     background-color: black;
 	height:auto;
 	min-height: min-content;
+	/*flex: 1 0 6%;		100/grid_size */
 }
 
 .square:before {
