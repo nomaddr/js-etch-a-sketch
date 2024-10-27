@@ -1,5 +1,5 @@
 let grid_size = 16;
-let grid = [];
+//let grid = [];
 const container = document.querySelector(".container");
 const button = document.querySelector("#reset");
 
@@ -8,6 +8,10 @@ button.addEventListener("click", () => {
 	if (0 < size && size < 101 && !isNaN(size)) {
 		console.log("input is valid");
 		console.log(size);
+		// Remove existing Grid
+		while (container.firstChild) {
+			container.removeChild(container.firstChild);	
+		}
 		createGrid(size);
 	} else {
 		alert("Input is not Valid! Must be a Number 1 - 100")
@@ -17,7 +21,7 @@ button.addEventListener("click", () => {
 
 function createGrid(size) {
 	// Create Grid using Flexbox
-	grid = [];
+	const grid = [];
 	const percentage = calcBasisPercentage(size);
 	for (let i = 0; i < size * size; i++) {
 		grid[i] = document.createElement("div");
@@ -36,7 +40,4 @@ function createGrid(size) {
 
 function calcBasisPercentage(n) {
 	return Math.round((100 / n) * 100) / 100;
-	//return Math.round(100 / n);
 }
-
-//createGrid(grid_size);
