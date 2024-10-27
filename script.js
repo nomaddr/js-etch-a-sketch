@@ -31,9 +31,11 @@ function createGrid(size) {
 		grid[i].addEventListener("mouseover", () => {
 			grid[i].classList.add("active");
 		});
+		/* 
 		grid[i].addEventListener("mouseout", () => {
 			grid[i].classList.remove("active");
 		});
+		*/
 		container.appendChild(grid[i]);
 	}
 }
